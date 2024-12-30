@@ -1,0 +1,21 @@
+@use '../../sass/utils/colors.scss';
+
+.form-ui {
+    background-color: colors.$dark-sidebar;
+    padding: 40px;
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        height: 40px;
+        border-radius: 40px;
+        background-color: colors.$dark-borders;
+        border: 2px solid colors.$dark-borders;
+        padding: 10px;
+        font-size: 14px;
+        width: 300px;
+        outline: 0;
+
+        &:focus {
+            border: 2px solid colors.$main-color;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@use '../../sass/utils/colors.scss';
+
+.top-banner {
+    width: 100%;
+    height: 400px;
+    background-color: #666;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    justify-content: center;
+
+    &.item-1 {
+        background-image: url('../images/top-banner.jpg');
+    }
+
+    &.item-2 {
+        background-image: url('../images/top-banner-2.jpg');
+    }
+
+    &.item-3 {
+        background-image: url('../images/top-banner-3.jpg');
+    }
+
+    h2 {
+        color: #ffffff;
+        font-size: 60px;
+        font-family: "Lora", serif;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .banner-link {
+        text-align: center;
+    }
+
+    a {
+        cursor: pointer;
+    }
+}
+
+.splide__pagination__page.is-active {
+    background: colors.$main-color;
+}

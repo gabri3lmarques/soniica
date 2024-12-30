@@ -1,0 +1,14 @@
+@use './utils/reset.scss';
+@use './utils/colors.scss';
+@use './utils/text.scss';
+@use './utils/general.scss';
+@use '../components/top-menu/top-menu.scss';
+@use '../components/sidebar/sidebar.scss';
+@use '../components/player/player.scss';
+@use '../components/buttons/buttons.scss';
+@use '../components/top-banner/top-banner.scss';
+@use '../components/container/container.scss';
+@use '../components/song/song.scss';
+@use '../components/playlist/playlist.scss';
+@use '../components/form-ui/form-ui.scss';
+@use '../components/tooltip-ui/tooltip-ui.scss';

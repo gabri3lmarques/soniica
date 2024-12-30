@@ -1,0 +1,27 @@
+@use '../../sass/utils/colors.scss';
+
+.button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: colors.$dark-borders;
+    color: colors.$main-color;
+    border: 1px solid colors.$dark-borders;
+    font-size: 14px;
+
+    &.reverse {
+        background-color: colors.$main-color;
+        color: rgba(0, 0, 0, 0.6);
+        border: 1px solid colors.$main-color;
+
+        &:hover {
+            background-color: colors.$dark-borders;
+            color: colors.$main-color;
+            border: 1px solid colors.$dark-borders;
+        }
+    }
+
+    &:hover {
+        background-color: colors.$main-color;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}

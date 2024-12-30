@@ -1,0 +1,156 @@
+@use '../../sass/utils/colors.scss';
+
+.song {
+    background-color: colors.$dark-sidebar;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid colors.$dark-sidebar;
+    transition: 300ms;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &.active {
+        border: 1px solid colors.$main-color;
+        background-color: colors.$dark-borders;
+
+        .thumb-container {
+            .sound-wave-container {
+                display: flex;
+            }
+        }
+
+        &:hover {
+            .thumb-container {
+                .sound-wave-container {
+                    display: none;
+                }
+            }
+
+            .thumb-container {
+                .controls {
+                    display: flex;
+                }
+            }
+        }
+
+        .thumb-container {
+            .controls {
+                display: none;
+                .play-button {
+                    background-image: url('../images/icons/pause.svg');
+                }
+            }
+        }
+    }
+
+    .thumb-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+
+        .thumb {
+            width: 100%;
+        }
+
+        .controls {
+            height: 150px;
+            width: 150px;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .play-button {
+                height: 40px;
+                width: 40px;
+                background-color: rgba(#000000, 0.7);
+                border-radius: 2px;
+                background-image: url('../images/icons/play.svg');
+                background-repeat: no-repeat;
+                border: 0;
+                background-position: center;
+                border-radius: 50px;
+            }
+        }
+
+        .sound-wave-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#000000, 0.7);
+            display: none;
+        }
+    }
+
+    .title-container {
+        margin-top: 10px;
+        .title {
+            font-size: 13px;
+        }
+    }
+
+    .artist-container {
+        margin-top: 3px;
+        .artist {
+            font-size: 13px;
+            display: flex;
+            color: colors.$main-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .add-to-playlist-form {
+        // position: absolute;
+        // opacity: 0;
+        // pointer-events: none;
+        // height: 0;
+        // width: 0;
+        // overflow: hidden;
+    }
+
+
+}
+
+.sound-wave {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+    width: 50px; /* Quadrado */
+    height: 50px; /* Quadrado */
+    background-color: transparent;
+  }
+  
+  .bar {
+    width: 5px; 
+    height: 100%;
+    background-color: colors.$main-color; 
+    animation: sound 1s infinite;
+    border-radius: 2px;
+  }
+  
+  .bar:nth-child(1) { animation-delay: 0s; }
+  .bar:nth-child(2) { animation-delay: 0.2s; }
+  .bar:nth-child(3) { animation-delay: 0.4s; }
+  .bar:nth-child(4) { animation-delay: 0.6s; }
+  
+  @keyframes sound {
+    0%, 100% {
+      transform: scaleY(0.3); /* Altura mínima da barra */
+    }
+    50% {
+      transform: scaleY(1); /* Altura máxima da barra */
+    }
+  }
+  

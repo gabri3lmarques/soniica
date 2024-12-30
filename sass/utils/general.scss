@@ -1,0 +1,40 @@
+@use './colors.scss';
+
+/* Definir o layout geral */
+.layout {
+    display: flex;
+    flex-direction: column; /* Organizar itens na vertical */
+    height: 100vh; /* Altura total da janela */
+    margin: 0;
+}
+
+
+
+/* Player no rodapé */
+.player {
+    background-color: #2ecc71;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Conteúdo principal entre o menu e o player */
+.content {
+    display: flex; /* Organizar itens na horizontal (sidebar e main) */
+    flex: 1; /* Ocupa o espaço restante */
+    overflow: hidden;
+}
+
+.main {
+    background-color: colors.$dark-main;
+    flex: 1; /* Ocupa todo o espaço restante horizontalmente */
+    width: 85vw;
+}
+
+.simplebar-scrollbar::before {
+    background-color: colors.$main-color;
+    opacity: 1;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
+}

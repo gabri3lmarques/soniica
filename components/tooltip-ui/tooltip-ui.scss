@@ -1,0 +1,13 @@
+@use '../../sass/utils/colors.scss';
+
+.ui-tooltip {
+    font-size: 11px;
+    min-width: 80px;
+    padding: 6px;
+    background-color: colors.$dark-main;
+    border: 2px solid colors.$dark-borders;
+    border-radius: 4px;
+    position: absolute;
+    left: -25px;
+    bottom: 10px;
+}

@@ -1,0 +1,13 @@
+.container {
+    padding: 40px;
+    width: 100%;
+    margin-top: 40px;
+
+    &.p-t-0 {
+        padding-top: 0;
+    }
+
+    &.m-t-0 {
+        margin-top: 0;
+    }
+}

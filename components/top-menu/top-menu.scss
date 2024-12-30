@@ -1,0 +1,90 @@
+/* Top Menu */
+@use '../../sass/utils/colors.scss';
+
+.top-menu {
+    background-color: colors.$dark-main;
+    height: 80px;
+    border-bottom: 2px solid colors.$dark-borders;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+
+    .login {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a {
+            color: #ffffff;
+
+            &:hover {
+                color: colors.$main-color;
+            }
+        }
+
+        .icon {
+            fill: #ffffff;
+
+            &.active {
+                fill: colors.$main-color;
+            }
+        }
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        ul {
+            display: flex;
+            gap: 10px;
+
+            li {
+                a {
+                    color: #ffffff;
+
+                    &:hover {
+                        color: colors.$main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .searchform {
+        background-color: colors.$dark-borders;
+        border: 1px solid colors.$dark-borders;
+        border-radius: 50px;
+        padding: 11px 20px;
+        display: flex;
+        align-items: center;
+
+        &.active {
+            border: 1px solid colors.$main-color;
+        }
+
+        input[type="text"] {
+            background-color: transparent;
+            font-size: 14px;
+            border: 0;
+            outline: 0;
+            color: #fff;
+        }
+
+        #searchsubmit {
+            height: 20px;
+            width: 20px;
+            border: 0;
+            background-color: transparent;
+            background-image: url('../images/icons/search.svg');
+            background-size: 20px;
+        }
+    }
+
+    .link-logo {
+        line-height: 1;
+    }
+}

@@ -1,0 +1,8 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 14" width="12" height="14">
+	<title>artist-svg</title>
+	<style>
+		.s0 { fill: #000000 } 
+	</style>
+	<path class="s0" d="m6 6c1.7 0 3-1.3 3-3 0-1.7-1.3-3-3-3-1.7 0-3 1.3-3 3 0 1.7 1.3 3 3 3z"/>
+	<path class="s0" d="m12 11c0-1.7-1.3-3-3-3h-6c-1.7 0-3 1.3-3 3v3h12z"/>
+</svg>
