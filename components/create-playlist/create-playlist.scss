@@ -1,0 +1,14 @@
+@use '../../sass/utils/colors.scss';
+
+.create-playlist {
+    background-color: colors.$dark-borders;
+    border-radius: 4px;
+    padding: 10px;
+
+    .create-playlist_header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+}

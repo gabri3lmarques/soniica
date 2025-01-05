@@ -39,7 +39,7 @@
             .controls {
                 display: none;
                 .play-button {
-                    background-image: url('../images/icons/pause.svg');
+                    background-image: url('../images/icons/player/pause.svg');
                 }
             }
         }
@@ -70,7 +70,7 @@
                 width: 40px;
                 background-color: rgba(#000000, 0.7);
                 border-radius: 2px;
-                background-image: url('../images/icons/play.svg');
+                background-image: url('../images/icons/player/play.svg');
                 background-repeat: no-repeat;
                 border: 0;
                 background-position: center;
@@ -109,17 +109,6 @@
             }
         }
     }
-
-    .add-to-playlist-form {
-        // position: absolute;
-        // opacity: 0;
-        // pointer-events: none;
-        // height: 0;
-        // width: 0;
-        // overflow: hidden;
-    }
-
-
 }
 
 .sound-wave {

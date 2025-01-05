@@ -1,7 +1,5 @@
 const glideElement = document.querySelector('.splide');
 
-console.log(glideElement )
-
 if (glideElement) {
     new Splide( '.splide', {
         type   : 'fade',

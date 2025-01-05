@@ -63,7 +63,32 @@ const addSongToPlaylist = async (playlistId, songId) => {
 };
 
 // Function to Remove Song from Playlist
-const removeSongFromPlaylist = async (playlistId, songId) => {
-  const result = await apiRequest("DELETE", `${playlistId}/remove-song`, { song_id: songId });
-  alert(result.message || "Song removed from playlist!");
+const removeSongFromPlaylist = async (playlistId, songId, button) => {
+  if (!confirm("Tem certeza que deseja remover essa música da playlist?")) {
+    return;
+  }
+
+  try {
+      const response = await apiRequest("DELETE", `${playlistId}/remove-song`, { song_id: songId });
+
+      // Certifique-se de que a resposta é interpretada corretamente
+      const result = response;
+
+      let message;
+      if (result.message) {
+          message = result.message; // Usa a mensagem retornada pela API
+      } else {
+          message = "Música removida da playlist."; // Mensagem padrão
+      }
+      
+      alert(message);
+      
+      // Remover a música do front-end após sucesso
+      button.closest("li").remove();
+  } catch (error) {
+      console.error("Erro ao remover a música:", error);
+      alert("Ocorreu um erro ao remover a música.");
+  }
 };
+
+

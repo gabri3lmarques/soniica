@@ -1,42 +1,109 @@
 <div class="sidebar">
-<!-- Formulário para Criar Playlist -->
-<form id="create-playlist-form">
-  <label for="playlist_name">Nome da Playlist:</label>
-  <input type="text" id="playlist_name" name="playlist_name" placeholder="Digite o nome da playlist" required>
-  <button type="button" id="create-playlist-btn">Criar Playlist</button>
-</form>
 
-<!-- Mensagem de Feedback -->
-<div id="playlist-feedback" style="margin-top: 10px;"></div>
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/music-genres.svg" alt="">
+			<span>Music Genres</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const createPlaylistButton = document.getElementById("create-playlist-btn");
-    const feedbackDiv = document.getElementById("playlist-feedback");
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/go-viral.svg" alt="">
+			<span>Go Viral</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
 
-    createPlaylistButton.addEventListener("click", async () => {
-      const playlistNameInput = document.getElementById("playlist_name");
-      const playlistName = playlistNameInput.value.trim();
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/mood.svg" alt="">
+			<span>Mood</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
 
-      if (!playlistName) {
-        feedbackDiv.textContent = "O nome da playlist não pode estar vazio.";
-        feedbackDiv.style.color = "red";
-        return;
-      }
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/moovies.svg" alt="">
+			<span>Moovies</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
 
-      // Criar a playlist
-      try {
-        await createPlaylist(playlistName);
-        feedbackDiv.textContent = `Playlist "${playlistName}" criada com sucesso!`;
-        feedbackDiv.style.color = "green";
-        playlistNameInput.value = ""; // Limpa o campo de entrada
-      } catch (error) {
-        feedbackDiv.textContent = "Erro ao criar a playlist.";
-        feedbackDiv.style.color = "red";
-        console.error("Erro ao criar a playlist:", error);
-      }
-    });
-  });
-</script>
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/instrumental.svg" alt="">
+			<span>Instrumental</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
 
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/game.svg" alt="">
+			<span>Gaming</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
+
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/holidays.svg" alt="">
+			<span>Holidays</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
+
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/events.svg" alt="">
+			<span>Eevents</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
+
+	<div class="category-menu">
+		<div class="category-menu_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/tags/activities.svg" alt="">
+			<span>Activities</span>
+		</div>
+		<div class="category-menu_items">
+			<p>Conteúdo interno 1</p>
+		</div>
+	</div>
+
+	<!-- <div class="create-playlist">
+		<div class="create-playlist_header">
+			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/ui/playlists.svg" alt="">
+			<span>Your playlists</span>
+		</div>
+		<form id="create-playlist-form">
+			<input type="text" id="playlist_name" name="playlist_name" placeholder="Digite o nome da playlist" required>
+			<button class="button reverse" type="button" id="create-playlist-btn">Criar Playlist</button>
+		</form>
+	</div>
+    recebe Mensagem de Feedback via javascript através do form de criar playlist
+    <div id="playlist-feedback" style="margin-top: 10px;"></div> -->
 </div>
+
+
+
+

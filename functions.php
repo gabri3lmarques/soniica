@@ -384,8 +384,14 @@ function soniica_register_rest_routes() {
     ]);
 
     // Remover Música da Playlist
+    // register_rest_route('soniica/v1', '/playlists/(?P<id>\\d+)/remove-song', [
+    //     'methods' => 'DELETE',
+    //     'callback' => 'soniica_remove_song_from_playlist',
+    //     'permission_callback' => 'soniica_check_ownership',
+    // ]);
+
     register_rest_route('soniica/v1', '/playlists/(?P<id>\\d+)/remove-song', [
-        'methods' => 'DELETE',
+        'methods' => 'DELETE', // Temporariamente usar POST em vez de DELETE
         'callback' => 'soniica_remove_song_from_playlist',
         'permission_callback' => 'soniica_check_ownership',
     ]);
@@ -484,7 +490,6 @@ function soniica_add_song_to_playlist($request) {
     return rest_ensure_response(['message' => __('Song added to playlist.')]);
 }
 
-
 // Remover Música da Playlist
 function soniica_remove_song_from_playlist($request) {
     global $wpdb;
@@ -541,9 +546,8 @@ function render_add_to_playlist_form($song_id) {
         }        
     }
 }
-?>
 
-<?php
+
 function list_playlists_with_songs() {
     global $wpdb;
 
@@ -597,6 +601,89 @@ function list_playlists_with_songs() {
         echo '</li>';
     }
     echo '</ul>';
+}
+
+// Adicionar a coluna 'Criador' na listagem do CPT 'playlist'
+add_filter('manage_playlist_posts_columns', function($columns) {
+    $columns['creator'] = 'Criador';
+    return $columns;
+});
+
+// Preencher a coluna com o e-mail do criador
+add_action('manage_playlist_posts_custom_column', function($column, $post_id) {
+    if ($column === 'creator') {
+        $author_id = get_post_field('post_author', $post_id);
+        $author_email = get_the_author_meta('user_email', $author_id);
+        echo esc_html($author_email);
+    }
+}, 10, 2);
+
+// Adicionar uma meta box na página de edição da playlist
+add_action('add_meta_boxes', function() {
+    add_meta_box(
+        'playlist_songs_box',
+        'Músicas na Playlist',
+        'render_playlist_songs_box',
+        'playlist',
+        'normal',
+        'high'
+    );
+});
+
+// Renderizar a meta box com a lista de músicas
+function render_playlist_songs_box($post) {
+    global $wpdb;
+    $playlist_id = $post->ID;
+
+    // Buscar as músicas associadas a essa playlist
+    $songs = $wpdb->get_results($wpdb->prepare(
+        "SELECT s.ID, s.post_title FROM wp_playlist_songs ps
+         INNER JOIN wp_posts s ON ps.song_id = s.ID
+         WHERE ps.playlist_id = %d AND s.post_type = 'song' AND s.post_status = 'publish'",
+        $playlist_id
+    ));
+
+    if (empty($songs)) {
+        echo '<p>Não há músicas nesta playlist.</p>';
+        return;
+    }
+
+    echo '<ul>';
+    foreach ($songs as $song) {
+        echo '<li>' . esc_html($song->post_title) . ' (ID: ' . esc_html($song->ID) . ')</li>';
+    }
+    echo '</ul>';
+}
+
+//
+
+function is_current_user_post_author(){
+    if (is_user_logged_in()) {
+        // Obtém o ID do usuário atual
+        $current_user_id = get_current_user_id();
+
+        // Obtém o ID do autor do post atual
+        $post_author_id = get_the_author_meta('ID');
+
+        // Compara se o usuário atual é o autor do post
+        if ($current_user_id === $post_author_id) {
+            ?>
+                <script>
+                    window.location(console.log('é o dono do post'))
+                </script>
+            <?php
+        } else {
+            ?>
+                <script>
+                    window.location="<?php echo(home_url()); ?>";
+                </script>
+            <?php
+        }
+    } else {
+        ?>
+        <script>console.log("não está logado")</script>
+        <?php
+    }
 }
 ?>
 
