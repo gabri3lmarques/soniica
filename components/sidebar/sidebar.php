@@ -90,18 +90,17 @@
 		</div>
 	</div>
 
-	<!-- <div class="create-playlist">
+	<div class="create-playlist">
 		<div class="create-playlist_header">
 			<img src="<?php echo(get_theme_file_uri()); ?>/assets/images/icons/ui/playlists.svg" alt="">
-			<span>Your playlists</span>
+			<h4>Playlists</h4>
 		</div>
-		<form id="create-playlist-form">
-			<input type="text" id="playlist_name" name="playlist_name" placeholder="Digite o nome da playlist" required>
-			<button class="button reverse" type="button" id="create-playlist-btn">Criar Playlist</button>
+		<form id="create-playlist-form" class="form-ui">
+			<input type="text" id="playlist_name" name="playlist_name" autocomplete="off" placeholder="Playlist name..." required>
+			<button class="button light" type="button" id="create-playlist-btn">create playlist</button>
 		</form>
 	</div>
-    recebe Mensagem de Feedback via javascript através do form de criar playlist
-    <div id="playlist-feedback" style="margin-top: 10px;"></div> -->
+    <div id="playlist-feedback" style="margin-top: 10px;"></div>
 </div>
 
 

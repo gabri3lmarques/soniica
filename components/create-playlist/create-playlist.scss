@@ -5,10 +5,31 @@
     border-radius: 4px;
     padding: 10px;
 
+    h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     .create-playlist_header {
         display: flex;
         align-items: center;
         gap: 10px;
         margin-bottom: 10px;
+    }
+
+    .form-ui {
+        padding: 20px 10px;
+        border-radius: 4px;
+
+        input {
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .button {
+            padding: 4px 10px;
+            font-size: 13px;
+            margin-top: 10px;
+        }
     }
 }
